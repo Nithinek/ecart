@@ -1,0 +1,45 @@
+<!--empty wishlist-->
+<div class="" *ngIf="allwishlistitem.length==0">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-danger">Your wishlist is Empty</h1>
+            <img src="https://media.istockphoto.com/vectors/wishlist-with-cartoon-stickman-vector-vector-id1030744710?s=170667a">
+        </div>
+        <div class="col mb-5 mt-5">
+            <a class="btn btn-outline-dark" routerLink="">Back To shopping</a>
+            
+        </div>
+    </div>
+</div>
+
+<!--wishlist with content-->
+<section class="py-5" *ngIf="allwishlistitem.length!=0">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5"*ngFor="let wish of allwishlistitem">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="wish.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{wish.title}}</h5>
+                            <!-- Product price-->
+                           ${{wish.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                       
+                        <div class="mt-2">
+                            <a (click)="removewishlistitem(wish.id)" class="btn btn-danger me-5 fa-beat "><i class="fa-solid fa-trash"></i></a>
+                            <a (click)="addtocart(wish)" class="btn btn-success fa-beat ms-4 " ><i class="fa-solid fa-cart-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>
+        

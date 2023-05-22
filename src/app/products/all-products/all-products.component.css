@@ -1,0 +1,15 @@
+.banner{
+    background-image: url('https://thumbs.dreamstime.com/z/christmas-promotional-sales-banner-shopping-cart-sale-filled-decorations-gifts-tree-168702540.jpg')
+    
+}
+.card img{
+    transition: 3s;
+    height: 250px;
+    width: 100%;
+    padding: 20px;
+}
+.card img:hover{
+    transform: scale(1.1);
+    transition: 2s;
+    
+}
